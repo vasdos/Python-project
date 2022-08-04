@@ -1,7 +1,11 @@
 from unittest import TestCase, main
 import doctest
-import unittest
 from learn_py import divisor
+
+
+def load_tests(loader, tests, ignore):
+    tests.addTests(doctest.DocTestSuite(divisor))
+    return tests
 
 
 class TestDivisor(TestCase):
